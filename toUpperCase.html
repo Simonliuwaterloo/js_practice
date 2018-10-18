@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	let sent = "I’m a little tEa pot";
+	sent = sent.toLowerCase();
+	sent = sent.split(" ");
+	alert(sent);
+	for (let i = 0; i < sent.length; ++i){
+		sent[i] = sent[i].charAt(0).toUpperCase() + sent[i].slice(1);
+		console.log(sent[i]);
+	}
+	sent = sent.join(" ");
+	console.log(sent);
+</script>
+</head>
+<body>
+
+</body>
+</html>
