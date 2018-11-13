@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<script>
+	let user = {
+		name: "John",
+		age: 30,
+		"like cat": true
+	};
+	user.isAdmin = true;
+	delete user.age;
+	alert(user.age);
+	alert(user["like cat"]); //for multiple words property, use square brackets
+	delete user["like cat"];
+	alert(user["like cat"]);
+</script>
