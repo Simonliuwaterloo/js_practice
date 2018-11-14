@@ -7,8 +7,72 @@
 	};
 	user.isAdmin = true;
 	delete user.age;
-	alert(user.age);
-	alert(user["like cat"]); //for multiple words property, use square brackets
+	console.log(user.age);
+	key = "like cat"
+	console.log(user[key]); //for multiple words property, use square brackets
 	delete user["like cat"];
-	alert(user["like cat"]);
+	console.log(user["like cat"]);
+
+	//for computed properties
+	let fruit = prompt("Which fruit to buy?", "apple");
+	let bag = {
+		[fruit]: 5,
+	};
+
+	console.log(bag.apple);
+
+	function makeUser(name, age) {
+		return {
+			name,
+			age,
+		};
+	}
+	user = makeUser("John", 30);
+	console.log(user.name);
+
+	//note that in JS, it is possible to access an object property that doesn't exist
+	user = {};
+	console.log( user.noproperty === undefined);//this is used to check the existence of a property
+
+	//another way is to use "in"
+	user = {
+		name: "John",
+		age: 30,
+	}
+	console.log("age" in user);
+	console.log("doesn't exist" in user);
+
+	//to walk over keys in an obj, use for...in loop
+	user = {
+		name: "John",
+		age: 30,
+		usAdmin: true
+	};
+
+	for (let key in user) {
+		console.log( key);
+		console.log(user[key]);
+	}
+
+	//are keys in an obj ordered?
+	let codes = {
+		"49": "Germany",
+		"41": "Switzerland",
+		"44": "UK",
+		"1": "USA",
+		name: "John",
+		sex: "male",
+	};
+	for (let k in codes){
+		console.log(k)
+	}
+	//we can clone or merge objs using Object.assign method
+	usr = {name: "John"};
+	let permission1 = { canView: true};
+	let permission2 = { canEdit: true};
+
+	Object.assign(user, permission1, permission2)
+	for (let k in user){
+		console.log(k);
+	}
 </script>
