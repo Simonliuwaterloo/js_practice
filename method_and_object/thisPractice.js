@@ -27,4 +27,4 @@ let John = {
 };
 John.sayHi();
 
-//Why we don't just use alert(John,name)? Imagine you copied John to another object
+//Why we don't just use alert(John.name)? Imagine you copied John to another object
