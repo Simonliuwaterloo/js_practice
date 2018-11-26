@@ -14,6 +14,16 @@
 </head>
 
 <body>
+	<div id = "elem">
+		<div id="elem-content">Element</div>
+	</div>
+	<script type="text/javascript">
+		
+		alert(window['elem-content']);
+		//a better way
+		let elem = document.getElementById('elem');
+		elem.style.background = 'red';
+	</script>
   <table>
     <tr>
       <td>1:1</td>
@@ -53,5 +63,20 @@
   </table>
   <script src = paintDiagonal.js>
   </script>
+  <ul>
+  <li>The</li>
+  <li>test</li>
+</ul>
+<ul>
+  <li>has</li>
+  <li>passed</li>
+</ul>
+	<script type="text/javascript">
+		let elements = document.querySelectorAll('ul > li:last-child');
+
+		for (let elem of elements) {
+			alert(elem.innerHTML);
+		}
+	</script>
 </body>
 </html>
