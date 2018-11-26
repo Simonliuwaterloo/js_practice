@@ -40,7 +40,7 @@ console.log(truncate("hello", 20));
 
 function extractCurrencyValue(str) {
 	let count = 0;
-	for (let k = str.indexOf('$'); Number(str[k]) != NaN && k <= str.length; ++k) {
+	for (let k = str.indexOf('$'); Number(str[k]) != NaN && k < str.length; ++k) {
 		++count; 
 	}
 	return str.slice(str.indexOf('$') + 1, str.indexOf('$') + count);
