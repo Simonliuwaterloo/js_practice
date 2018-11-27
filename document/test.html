@@ -17,13 +17,7 @@
 	<div id = "elem">
 		<div id="elem-content">Element</div>
 	</div>
-	<script type="text/javascript">
-		
-		alert(window['elem-content']);
-		//a better way
-		let elem = document.getElementById('elem');
-		elem.style.background = 'red';
-	</script>
+
   <table>
     <tr>
       <td>1:1</td>
@@ -75,7 +69,7 @@
 		let elements = document.querySelectorAll('ul > li:last-child');
 
 		for (let elem of elements) {
-			alert(elem.innerHTML);
+			console.log(elem.innerHTML);
 		}
 	</script>
 </body>

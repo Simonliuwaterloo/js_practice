@@ -30,3 +30,7 @@ function sumInput() {
 }
 
 console.log(sumInput());
+//maxmun subarray problem
+function getMaxSubSum(arr) {
+
+}
