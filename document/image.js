@@ -19,4 +19,5 @@ function countBodyChildren() {
 	console.log(body.nodeType);
 	//element nodes = 1; attribute node = 2; text node = 3
 }
-window.onload = countBodyChildren;
+//window.onload = countBodyChildren;
+//window.open("https://www.google.ca/webhp?hl=en&sa=X&ved=0ahUKEwiOgdnznvfeAhVs7IMKHemMCagQPAgH");

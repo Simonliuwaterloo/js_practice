@@ -3,6 +3,19 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Image Gallary</title>
+	<script>
+		window.onload = function() {
+			console.log("rs");
+			if (!document.getElementsByClassName) return false;
+			let links = document.getElementsByClassName("popup")
+			for (let i = 0; i < links.length; ++i) {
+				links[i].onclick = function() {
+					window.open(this.href);
+					return false;
+				}
+			}
+		}
+	</script>
 </head>
 <body>
 	<h1>Snapshots</h1>
@@ -24,8 +37,9 @@
 	<img id="placeholder" src="placeholder.jpg" alt="my image gallery" />
 	<p id="description">Choose an image.</p>
 
-
+	<a href="https://github.com/" class="popup">github</a>
 	<script type-"text/javascript" src="image.js"></script>
+
 		
 </body>
 </html>
