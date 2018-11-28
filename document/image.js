@@ -19,5 +19,13 @@ function countBodyChildren() {
 	console.log(body.nodeType);
 	//element nodes = 1; attribute node = 2; text node = 3
 }
-//window.onload = countBodyChildren;
-//window.open("https://www.google.ca/webhp?hl=en&sa=X&ved=0ahUKEwiOgdnznvfeAhVs7IMKHemMCagQPAgH");
+
+function prepareGallery() {
+	if (!document.getElementsByTagName && document.getElementById("imagegallery")) return false;
+	let gallery = document.getElementById("imagegallery");
+	let links = gallery.getElementsByTagName("a");
+}	for (let i = 0; i < links.length; ++i) {
+	links[i].onclick = function() {
+		showPic(this); return false;
+		}
+	}
