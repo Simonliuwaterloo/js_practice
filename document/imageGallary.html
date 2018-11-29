@@ -4,33 +4,24 @@
 	<meta charset="utf-8" />
 	<title>Image Gallary</title>
 	<script>
-		window.onload = function() {
-			console.log("rs");
-			if (!document.getElementsByClassName) return false;
-			let links = document.getElementsByClassName("popup")
-			for (let i = 0; i < links.length; ++i) {
-				links[i].onclick = function() {
-					window.open(this.href);
-					return false;
-				}
-			}
-		}
+		
+
 	</script>
 </head>
 <body>
 	<h1>Snapshots</h1>
 	<ul id="imagegallery">
 		<li>
-			<a href="ps2b.jpg" onclick="showPic(this); return false;" title="A firework display"> Fireworks</a>
+			<a href="ps2b.jpg"  title="A firework display"> Fireworks</a>
 		</li>
 		<li>
-			<a href="p3sb.jpg" onclick="showPic(this); return false;" title="A cup of black coffee"> Coffee</a>
+			<a href="p3sb.jpg" title="A cup of black coffee"> Coffee</a>
 		</li>
 		<li>
-			<a href="p4sb.jpg"  onclick="showPic(this); return false;" title="A red, red rose">Rose</a>
+			<a href="p4sb.jpg"  title="A red, red rose">Rose</a>
 		</li>
 		<li>
-			<a href="p5sb.jpg"  onclick="showPic(this); return false;"title="The famous clock"> Big Ben</a>
+			<a href="p5sb.jpg"  title="The famous clock"> Big Ben</a>
 		</li>
 
 	</ul>
