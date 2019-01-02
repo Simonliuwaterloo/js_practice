@@ -1,8 +1,53 @@
 "use strict";
-
-let placeHolder = document.getElementById("placeholder");
-placeHolder.style.width = "50%";
-
+window.onload = function() {
+	popUp();
+	prepareGallery();
+	let para = document.createElement("p");//the node is floating free
+	let info = "nodeName: ";
+	info += para.nodeName;
+	info += " nodeType: ";
+	info += para.nodeType;
+	alert(info);
+	let testdiv = document.createElement("div");
+	document.body.appendChild(testdiv);
+	testdiv.innerHTML = "<p>I inserted this.</P>";
+	testdiv.appendChild(para);
+	let txt = document.createTextNode("I created text");//the node is floating free
+	para.appendChild(txt);
+	//insert " This is my content" to document
+	let sentence = document.createElement("p");
+	let txt1 = document.createTextNode("This is ");
+	let txt2 = document.createElement("em");
+	let emph = document.createTextNode("my ");
+	let txt3 = document.createTextNode("content");
+	txt2.appendChild(emph);
+	sentence.appendChild(txt1);
+	sentence.appendChild(txt2);
+	sentence.appendChild(txt3);
+	testdiv.appendChild(sentence);
+	//create placeholder
+	let placeholder = document.createElement("img");
+	placeholder.id = "placeholder";
+	placeholder.src = "placeholder.jpg";
+	placeholder.alt = "my image gallery";
+	let intro = document.createElement("p");
+	intro.id = "description";
+	intro.appendChild(document.createTextNode("introduction"));
+	//document.body.appendChild(placeholder);
+	//document.body.appendChild(intro);
+	placeholder.style.width = "50%";
+	document.body.insertBefore(placeholder, document.testdiv);
+	document.body.insertBefore(intro, document.testdiv);
+}
+function insertAfter(inserted, target) {
+	let parent = target.parentNode;
+	if (parent.lastChild == target) {
+		parent.appendChild(inserted);
+	}
+	else {
+		parent.insertBefore(inserted, target.nextSibling);
+	}
+}
 function showPic(whichpic) {
 	if (!document.getElementById("placeholder")) return false;
 	let source = whichpic.getAttribute("href");
@@ -52,34 +97,10 @@ function prepareGallery() {
 		//links[i].onkeypress = links[i].onclick;
 	}
 }
-window.onload = function() {
-	popUp();
-	prepareGallery();
-	let para = document.createElement("p");//the node is floating free
-	let info = "nodeName: ";
-	info += para.nodeName;
-	info += " nodeType: ";
-	info += para.nodeType;
-	alert(info);
-	let testdiv = document.getElementById("testdiv");
-	testdiv.innerHTML = "<p>I inserted this.</P>";
-	testdiv.appendChild(para);
-	let txt = document.createTextNode("I created text");//the node is floating free
-	para.appendChild(txt);
-	//insert " This is my content" to document
-	let sentence = document.createElement("p");
-	let txt1 = document.createTextNode("This is ");
-	let txt2 = document.createElement("em");
-	let emph = document.createTextNode("my ");
-	let txt3 = document.createTextNode("content");
-	txt2.appendChild(emph);
-	sentence.appendChild(txt1);
-	sentence.appendChild(txt2);
-	sentence.appendChild(txt3);
-	testdiv.appendChild(sentence);
-}
+
 function insertParagraph(text) {
 	var str = "<p>";
 	str += (text + "</p>");
 	document.write(str);
 }
+console.log(document.getElementsByTagName("body"));
