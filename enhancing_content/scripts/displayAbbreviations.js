@@ -41,5 +41,23 @@ function displayCite() {
 		cite.href = node.cite;
 	}	
 }
+function displayAccessKey() {
+	let nodeList = document.getElementsByTagName("a");
+	//create caption
+	let caption = document.createElement("h2");
+	caption.appendChild(document.createTextNode("Accesskeys"));
+	document.body.appendChild(caption);
+	//create list of access keys
+	let keyList = document.createElement("ul");
+	document.body.appendChild(keyList);
+	for (let node of nodeList) {
+		if (node.hasAttribute("accesskey")) {
+			let item = document.createElement("li");
+			keyList.appendChild(item);
+			item.appendChild(document.createTextNode(node.getAttribute("accesskey") + " : " + node.childNodes[0].nodeValue ));
+		}
+	}
+}
 addLoadEvent(displayAbbreviation);
 addLoadEvent(displayCite);
+addLoadEvent(displayAccessKey);
