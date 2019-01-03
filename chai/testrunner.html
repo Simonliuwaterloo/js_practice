@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mocha Tests</title>
+    <link rel="stylesheet" href="/Users/Simon Li/AppData/Roaming/npm/node_modules/mocha/mocha.css">
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <script src="/Users/Simon Li/AppData/Roaming/npm/node_modules/mocha/mocha.js"></script>
+    <script src="/Users/Simon Li/AppData/Roaming/npm/node_modules/chai/chai.js"></script>
+    <script>mocha.setup('bdd')</script>
+
+    <!-- load code you want to test here -->
+    <script src="className.js"></script>
+
+    <!-- load your test files here -->
+    <script src="arrayTest.js"></script>
+    <script src="classNameTest.js"></script>
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>
